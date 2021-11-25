@@ -1,0 +1,274 @@
+<html>
+<head>
+
+<style>
+    @font-face {
+        font-family: mo;
+        src: url("font/mom.otf");
+    }
+    html{
+        font-family: mo;
+    }
+#m{
+    height:70px;
+    color:white;
+    width:100%;
+    text-align:center;
+    margin:auto;
+    display:block;
+    border-radius:20px;
+    
+}
+    
+    #n{
+        
+    color:white;
+    background:-webkit-linear-gradient(left,red,green,blue);
+    width:100%;
+    text-align:center;
+    margin:auto;
+    display:block;
+    
+    border-radius:5px
+       text-transform: uppercase;
+    }
+    
+
+
+h1{
+    
+    font-size:40px;
+    vertical-align:middle;
+    text-shadow:5px 2px 4px grey;
+    color:lime;
+    
+}
+
+
+
+
+#red  {
+   
+   -webkit-appearance: none;
+    border-radius:10%;
+    height: 10px;
+    width: 235px;
+
+    background:-webkit-linear-gradient(right,red,black);
+    border-width:5px
+    border-color:black;
+    
+  }
+
+#green {
+   
+  -webkit-appearance: none;
+    border: none;
+    height: 10px;
+    width: 235px;
+    border-radius: 10%;
+    background:-webkit-linear-gradient(right,green,black);
+    border-width:5px
+    
+    
+    
+}
+
+#blue {
+    
+  -webkit-appearance: none;
+    border: none;
+    height: 10px;
+    width: 235px;
+    border-radius: 10%;
+    background:-webkit-linear-gradient(right,blue,black);
+    border-width:5px
+
+    }
+
+    
+
+#p{background-color:red;}
+#q{background-color:green;} 
+#r{background-color:blue;}
+
+#p,#q,#r{
+    
+    border-radius:5px;
+    border-width:3px;
+    float:right;
+}
+button{
+    background-color:black;
+    border-width:5px;
+    border-radius:5px;
+    color:white;
+    font-weight:bold;
+    border-color:lime;
+    margin:auto;
+    display:block;
+}
+#hex,#rgb{
+    
+    text-transform:uppercase;
+    background-color:black;
+    border-radius:5px;
+    
+}
+
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.46), 0px 0px 0px rgba(13, 13, 13, 0.46);
+  border: 2px solid black;
+  height: 20px;
+  width: 20px;
+  border-radius: 15px;
+  background: #555555;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+#red::-webkit-slider-thumb {
+    background-color: red;
+}
+#green::-webkit-slider-thumb {
+    background-color: green;
+}
+#blue::-webkit-slider-thumb {
+    background-color: blue;
+}
+
+</style>
+
+<script>
+
+function kick(){
+document.getElementById("p").value=document.getElementById("red").value;
+document.getElementById("q").value=document.getElementById("green").value;
+document.getElementById("r").value=document.getElementById("blue").value;
+}
+
+function hello(){
+    kick();
+var start=document.getElementById("red").value;
+document.getElementById("p").value=start;
+
+
+
+var star=document.getElementById("green").value;
+document.getElementById("q").value=star;
+
+
+var sta=document.getElementById("blue").value;
+document.getElementById("r").value=sta;
+
+
+var bgColor = "rgb(" + start + "," + star + "," + sta + ")";
+var god=document.getElementById("god").style.background = bgColor;
+ 
+document.getElementById("rgb").innerHTML=bgColor;
+
+var a = Number(start).toString(16);
+if(a.length<2){
+    a="0"+a;
+}
+var b = Number(star).toString(16);
+if(b.length<2){
+    b="0"+b;
+}
+var c = Number(sta).toString(16);
+if(c.length<2){
+    c="0"+c;
+}
+var rrggbb = "#" + a + b + c ; 
+var he=document.getElementById("hex").innerHTML=rrggbb;
+}
+
+function rgbToR(){
+
+var red=document.getElementById("p").value;
+document.getElementById("red").value=red;    
+
+var green=document.getElementById("q").value;
+document.getElementById("green").value=green;
+
+var blue=document.getElementById("r").value;
+document.getElementById("blue").value=blue;
+
+var bgColo = "rgb(" + red + "," + green + "," + blue + ")";
+god.style.background = bgColo;
+document.getElementById("rgb").innerHTML=bgColo;
+
+var d = Number(red).toString(16);
+if(d.length<2){
+    d="0"+d;
+}
+var e = Number(green).toString(16);
+if(e.length<2){
+    e="0"+e;
+}
+var f = Number(blue).toString(16);
+if(f.length<2){
+    f="0"+f;
+}
+var rrggbbo = "#" + d + e + f ; 
+var he=document.getElementById("hex").innerHTML=rrggbbo;
+}
+
+function pull(){
+    
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    
+    document.getElementById("red").value=x;
+    document.getElementById("green").value=y;
+    document.getElementById("blue").value=z;
+    god.style.background = bgColor;  
+    hello();
+    var but=
+    document.getElementById ("button").style.fontSize="15px";
+    
+}
+
+function setStyle(x)
+{
+document.getElementById(x).style.fontSize="15px";
+}
+function setStyl(x)
+{
+document.getElementById(x).style.fontSize="13px";
+}
+
+
+
+
+
+
+</script>
+
+<title>COLOR PICKER</title>
+
+
+</head>
+<body id="god">
+<div id="m"><h1 align="center">COLOR PICKER</h1></div><br>
+<div id="n">
+RED<input id="red" type="range" min="0" max="255" oninput="hello()" value="50"><input id="p"size="1" oninput="rgbToR()" onfocus="setStyle(this.id)" onblur="setStyl(this.id)"></input><br><br>
+GREEN<input id="green" type="range" min="0" max="255" oninput="hello()" value="50"><input id="q" size="1" oninput="rgbToR()" onfocus="setStyle(this.id)" onblur="setStyl(this.id)"></input><br><br>
+BLUE<input id="blue" type="range" min="0" max="255" oninput="hello()" value="50"><input id="r" size="1" oninput="rgbToR()" onfocus="setStyle(this.id)" onblur="setStyl(this.id)"></input><br>
+<br>
+
+<span style="font-weight:bolder;font-size:15;text-align:center;float:left;color:black;">RGB value:<br><span id="rgb" style="color:lime;font-size:20;">
+</span></span>
+<span style="font-weight:bolder;font-size:15;float:right;color:black;">HEXADECIMAL value:<br><span style="font-weight:bolder;font-size:20;color:lime;" id=hex></span><br></span><br><br>
+<br>
+<button onclick="pull()" align="center" id="button">RANDOM</button>
+  
+</div>
+
+
+
+
+</body>
+</html>
