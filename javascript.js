@@ -84,7 +84,23 @@ function mainer(){
   
 }
 
+window.onscroll = function() {mover()};
+var sarpe = document.getElementById("header");
 
+
+var chipko = sarpe.clientHeight;
+
+function mover(){
+var divi = document.getElementById("mains");
+if(window.pageYOffset >= chipko){
+    divi.style.marginTop = String(chipko);
+    sarpe.classList.add("fix");
+}
+else{
+    divi.style.marginTop = "0"
+    sarpe.classList.remove("fix");
+}
+}
 
 
 
