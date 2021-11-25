@@ -162,20 +162,19 @@ a {
 }
 .lft{
     background-color: #ff6600;
-    width: 60%;
+    width: 100%;
     height: auto;
     margin-top: 0.6vw;
-    align-self: flex-start;
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
     
 }
 .rght{
     background-color: #ffbb00;
-    width: 60%;
+    width: 100%;
     height: auto;
     margin-top: 0.6vw;
-    align-self: flex-end;
+    
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
     
