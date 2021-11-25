@@ -162,7 +162,7 @@ a {
 }
 .lft{
     background-color: #ff6600;
-    width: 60vmax;
+    width: 60vw;
     height: auto;
     margin-top: 0.6vw;
     align-self: flex-start;
@@ -172,7 +172,7 @@ a {
 }
 .rght{
     background-color: #ffbb00;
-    width: 60vmax;
+    width: 60vw;
     height: auto;
     margin-top: 0.6vw;
     align-self: flex-end;
