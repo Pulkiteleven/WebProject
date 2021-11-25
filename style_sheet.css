@@ -162,7 +162,7 @@ a {
 }
 .lft{
     background-color: #ff6600;
-    width: 50%;
+    width: 60%;
     height: auto;
     margin-top: 0.6vw;
     border-top-right-radius: 100px;
@@ -171,10 +171,10 @@ a {
 }
 .rght{
     background-color: #ffbb00;
-    width: 50%;
+    width: 60%;
     height: auto;
     margin-top: 0.6vw;
-    
+    align-self: flex-end;
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
     
