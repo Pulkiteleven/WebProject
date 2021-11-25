@@ -50,7 +50,7 @@ function colorp(){
   }
   else{
       colo.style.display = "none"
-      webp.style.display = "contents"
+      webp.style.display = "flex"
       cric.style.display = "none"
       remover();
 
@@ -68,7 +68,7 @@ function scoreb(){
     }
     else{
         cric.style.display = "none"
-        webp.style.display = "contents"
+        webp.style.display = "flex"
         colo.style.display = "none"
         remover();
         
@@ -79,7 +79,7 @@ function mainer(){
     var colo = document.getElementById("colo");
     var cric = document.getElementById("cricket");
       colo.style.display = "none";
-      webp.style.display = "contents";
+      webp.style.display = "flex";
       cric.style.display = "none";
       changer("main");
   
