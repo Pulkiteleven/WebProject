@@ -1,513 +1,574 @@
 <html>
-<head><title>CRICKET SCOREBOARD</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+  <title>CRICKET SCOREBOARD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @font-face {
+      font-family: mo;
+      src: url(font/mom.otf);
+    }
+    html{
+      font-family: mo;
+    }
+  </style>
 </head>
+
 <body>
-<div style="width:100%;background-color:grey" alt="">
-<div style="margin:auto;display:block;background-color:green;width:100%;height:30%;border:2px solid black;border-radius:30px;" alt="">
-<font size="15" face="impact" color="black"><bold><center>CRICKET</center> <center>SCORE BOARD</center></bold></font>
-</div>
-<div style="margin:auto;width:100%;background-color:white;border-radius:20px;">
+  <div style="width:100%;background-color:grey" alt="">
+    <div
+      style="margin:auto;display:block;background-color:green;width:100%;height:auto;border:2px solid black;border-radius:30px;"
+      alt="">
+      <font size="15"  color="black">
+        <bold>
+          <center>CRICKET</center>
+          <center>SCORE BOARD</center>
+        </bold>
+      </font>
+    </div>
+    <div style="margin:auto;width:100%;background-color:white;border-radius:20px;">
 
 
-<h4><center>SELECT OVERS</center></h4>
-<select id="overs" style="margin:auto;display:block" >
-<option value="1">ONE</option>
-<option value="2">TWO</option>
-<option value="3">THREE</option>
-<option value="4">FOUR</option>
-<option value="5">FIVE</option>
-<option value="6">SIX</option>
-<option value="7">SEVEN </option>
-<option value="8">EIGHT</option>
-<option value="9">NINE</option>
-<option value="10">TEN</option>
-</select>
-
-
-
-
-<div><span style="float:left;font-size:">FIRST BATSMAN</span>   <span style="float:right;font-size:;"> SECOND BATSMAN</span></div><br>
-<div>
-<input id="first" type="text" size="10" name="this" value=""  style="margin:auto;display:block;background-color:black;color:white;border-width:5px;float:left;">
-
-<input id="second" type="text" size="10" style="margin:auto;display:block;background-color:black;color:white;border-width:5px;float:right;" value=>
-</div>
-<br><br>
-
-
-<button type="button" onclick="start();appear_two();" style="margin:auto;display:block;background-color:black;color:white;border-width:5px;border-radius:20px;height:40px;">START THE GAME</button><br>
-
-
-<div id="all" style="display:none;" >
-<div style="display:block;margin:auto;background-image:url('india.png');background-repeat:no-repeat;color:white;border-radius:20px;width:75%;background-size:contain;" alt=""><br>
-
-<h1><center><font face="stencil" color="black">SCORE BOARD</center></h1>
-
-
-<table width="20%" border="" align="center" style="color:black;border-color:black;">
-<tr height="">
-<td align="center"><font size="6">SCORE</td>
-<td align="center"><font size="6">WKTS</td>
-</tr>
-<tr height="">
-<td align="center"><font size="10"> <a id="score">00</a></font></td>
-<td><font size="10"><a id="wkt">0</a></font></td>
-</tr>
-<tr height="">
-<td align="center">BALLS:<a id="balls">0</a>
-<td>OVERS:<a id="overplay">0</a></td>
-</td>
-</tr>
-</table><br>
-
-
-
-<table id="table" border="" align="center" width="300" style="color:black;">
-<tr>
-<td colspan="3">BATSMAN</td>
-<td>RUNS</td>
-<td>BALLS</td>
-</tr>
-
-<tr id="score_of_one">
-<td width="5"><button id="out" onclick="increase_out(); out_one();"style="background-color:black;color:white;border-width:5px;border-radius:20px">OUT</button></td>
-<td id="fnb" width="40"></td>
-<td width="7"><input type="radio" name="strike" id="skone"></td>
-<td><a id="runf"></a></td>
-<td><a id="nobp_first"></a></td>
-</tr>
-
-<tr id="score_of_two">
-<td width="10%"><button id="outout" onclick="increase_out(); out_two();" style="background-color:black;color:white;border-width:5px;border-radius:20px" >OUT</button></td>
-<td id="snb"></td>
-<td><input type="radio" name="strike" id="sktwo"></td>
-<td><a id="runs"></a></td>
-<td><a id="nobp_second"></a></td>
-</tr>
-
-</table></font><br>
-</div>
-<button style="margin:auto;display:blockstyle;margin:auto;display:block;background-color:black;color:white;border-width:5px;border-radius:20px" onclick="appear();">SHOW SCORES</button><br><br>
-<div id="AllScore" style="margin:auto;background-image:url('image.jpg');border-radius:20px;width:50%;display:none;" alt="" width="50">
-<font face="impact"><table border="" align="center" style="color:black">
-<tr>
-<td>NAME</td>
-<td>RUNS</td>
-<td>BALLS</td>
-</tr>
-<tr id="one">
-<td id="nameo"></td>
-<td id="runo"></td>
-<td id="ballon"></td>
-</tr>
-<tr id="two">
-<td id="namet"></td>
-<td id="runt"></td>
-<td id="ballt"></td>
-</tr>
-<tr id="three">
-<td id="nameth"></td>
-<td id="runth"></td>
-<td id="ballth"></td>
-</tr>
-<tr id="four">
-<td id="namefo"></td>
-<td id="runfo"></td>
-<td id="ballfo"></td>
-</tr>
-<tr id="five">
-<td id="namefi"></td>
-<td id="runfi"></td>
-<td id="ballfi"></td>
-</tr>
-<tr id="six">
-<td id="namesi"></td>
-<td id="runsi"></td>
-<td id="ballsi"></td>
-</tr>
-<tr id="seven">
-<td id="namese"></td>
-<td id="runse"></td>
-<td id="ballse"></td>
-</tr>
-<tr id="eight">
-<td id="namee"></td>
-<td id="rune"></td>
-<td id="balle"></td>
-</tr>
-<tr id="nine">
-<td id="namen"></td>
-<td id="runn"></td>
-<td id="balln"></td>
-</tr>
-<tr id="ten">
-<td id="namete"></td>
-<td id="runte"></td>
-<td id="ballte"></td>
-</tr>
-<tr id="eleven">
-<td id="nameel"></td>
-<td id="runel"></td>
-<td id="ballel"></td>
-</tr>
-</table></font><br>
-
-</div>
-</font><br>
-
-
-<div style="margin:auto;background-image:url('image.jpg');width:100%;border-color:black;border:7px dashed black;" alt=""><br>
-<center><button id="dot" onclick="increase_dot()" style="background-color:black;color:white;border-width:5px;border-radius:20px" >DOT</button>
-<button id="single" onclick="increase(); change_strike();" style="background-color:black;color:white;border-width:5px;border-radius:20px">SINGLE</button>
-<button id="double" onclick="increase_two()" style="background-color:black;color:white;border-width:5px;border-radius:20px">DOUBLE</button>
-<button id="four" onclick="increase_four()" style="background-color:black;color:white;border-width:5px;border-radius:20px">FOUR</button>
-<button id="six" onclick="increase_six()" style="background-color:black;color:white;border-width:5px;border-radius:20px">SIX</button>
-<br>
-<center><button id="wide" onclick="increase_wide()" style="background-color:black;color:white;border-width:5px;border-radius:20px">WIDE</button>
-<button id="noball" onclick="increase_no()" style="background-color:black;color:white;border-width:5px;border-radius:20px">NO-BALL</button>
-<button id="bye" style="background-color:black;color:white;border-width:5px;border-radius:20px">BYE</button><br>
-<button id="overover" onclick="increase_over(); change_strike();" style="background-color:black;color:white;border-width:5px;border-radius:20px">OVER</button></center>
-</div>
-</div>
-</div><br><br>
-</div>
+      <h4>
+        <center>SELECT OVERS</center>
+      </h4>
+      <select id="overs" style="margin:auto;display:block">
+        <option value="1">ONE</option>
+        <option value="2">TWO</option>
+        <option value="3">THREE</option>
+        <option value="4">FOUR</option>
+        <option value="5">FIVE</option>
+        <option value="6">SIX</option>
+        <option value="7">SEVEN </option>
+        <option value="8">EIGHT</option>
+        <option value="9">NINE</option>
+        <option value="10">TEN</option>
+      </select>
 
 
 
 
+      <div><span style="float:left;font-size:">FIRST BATSMAN</span> <span style="float:right;font-size:;"> SECOND
+          BATSMAN</span></div><br>
+      <div>
+        <input id="first" type="text" size="10" name="this" value=""
+          style="margin:auto;display:block;background-color:black;color:white;border-width:5px;float:left;">
+
+        <input id="second" type="text" size="10"
+          style="margin:auto;display:block;background-color:black;color:white;border-width:5px;float:right;" value=>
+      </div>
+      <br><br>
+
+
+      <button type="button" onclick="start();appear_two();"
+        style="margin:auto;display:block;background-color:black;color:white;border-width:5px;border-radius:20px;height:40px;">START
+        THE GAME</button><br>
+
+
+      <div id="all" style="display:none;">
+        <div
+          style="display:block;margin:auto;background-image:url('india.png');background-repeat:no-repeat;color:white;border-radius:20px;width:75%;background-size:contain;"
+          alt=""><br>
+
+          <h1>
+            <center>
+              <font  color="black">SCORE BOARD
+            </center>
+          </h1>
+
+
+          <table width="20%" border="" align="center" style="color:black;border-color:black;">
+            <tr height="">
+              <td align="center">
+                <font size="6">SCORE
+              </td>
+              <td align="center">
+                <font size="6">WKTS
+              </td>
+            </tr>
+            <tr height="">
+              <td align="center">
+                <font size="10"> <a id="score">00</a></font>
+              </td>
+              <td>
+                <font size="10"><a id="wkt">0</a></font>
+              </td>
+            </tr>
+            <tr height="">
+              <td align="center">BALLS:<a id="balls">0</a>
+              <td>OVERS:<a id="overplay">0</a></td>
+              </td>
+            </tr>
+          </table><br>
 
 
 
+          <table id="table" border="" align="center" width="300" style="color:black;">
+            <tr>
+              <td colspan="3">BATSMAN</td>
+              <td>RUNS</td>
+              <td>BALLS</td>
+            </tr>
+
+            <tr id="score_of_one">
+              <td width="5"><button id="out" onclick="increase_out(); out_one();"
+                  style="background-color:black;color:white;border-width:5px;border-radius:20px">OUT</button></td>
+              <td id="fnb" width="40"></td>
+              <td width="7"><input type="radio" name="strike" id="skone"></td>
+              <td><a id="runf"></a></td>
+              <td><a id="nobp_first"></a></td>
+            </tr>
+
+            <tr id="score_of_two">
+              <td width="10%"><button id="outout" onclick="increase_out(); out_two();"
+                  style="background-color:black;color:white;border-width:5px;border-radius:20px">OUT</button></td>
+              <td id="snb"></td>
+              <td><input type="radio" name="strike" id="sktwo"></td>
+              <td><a id="runs"></a></td>
+              <td><a id="nobp_second"></a></td>
+            </tr>
+
+          </table>
+          </font><br>
+        </div>
+        <button
+          style="margin:auto;display:blockstyle;margin:auto;display:block;background-color:black;color:white;border-width:5px;border-radius:20px"
+          onclick="appear();">SHOW SCORES</button><br><br>
+        <div id="AllScore"
+          style="margin:auto;background-image:url('image.jpg');border-radius:20px;width:50%;display:none;" alt=""
+          width="50">
+          <font >
+            <table border="" align="center" style="color:black">
+              <tr>
+                <td>NAME</td>
+                <td>RUNS</td>
+                <td>BALLS</td>
+              </tr>
+              <tr id="one">
+                <td id="nameo"></td>
+                <td id="runo"></td>
+                <td id="ballon"></td>
+              </tr>
+              <tr id="two">
+                <td id="namet"></td>
+                <td id="runt"></td>
+                <td id="ballt"></td>
+              </tr>
+              <tr id="three">
+                <td id="nameth"></td>
+                <td id="runth"></td>
+                <td id="ballth"></td>
+              </tr>
+              <tr id="four">
+                <td id="namefo"></td>
+                <td id="runfo"></td>
+                <td id="ballfo"></td>
+              </tr>
+              <tr id="five">
+                <td id="namefi"></td>
+                <td id="runfi"></td>
+                <td id="ballfi"></td>
+              </tr>
+              <tr id="six">
+                <td id="namesi"></td>
+                <td id="runsi"></td>
+                <td id="ballsi"></td>
+              </tr>
+              <tr id="seven">
+                <td id="namese"></td>
+                <td id="runse"></td>
+                <td id="ballse"></td>
+              </tr>
+              <tr id="eight">
+                <td id="namee"></td>
+                <td id="rune"></td>
+                <td id="balle"></td>
+              </tr>
+              <tr id="nine">
+                <td id="namen"></td>
+                <td id="runn"></td>
+                <td id="balln"></td>
+              </tr>
+              <tr id="ten">
+                <td id="namete"></td>
+                <td id="runte"></td>
+                <td id="ballte"></td>
+              </tr>
+              <tr id="eleven">
+                <td id="nameel"></td>
+                <td id="runel"></td>
+                <td id="ballel"></td>
+              </tr>
+            </table>
+          </font><br>
+
+        </div>
+        </font><br>
 
 
-
-<script type="text/javascript">
- //srrings variables#############################
- var d="*";
- var f="";
- var j="out";
- // To store all the strike#################
- //##################################################
- //##################################################
- //##################################################
- var skone=document.getElementById("skone").checked;
- var sktwo=document.getElementById("sktwo").checked;
- var OnStrike=[skone,sktwo];
- //to store batsman name############################
- //##################################################
- //##################################################
- //##################################################
- var fnb=document.getElementById("fnb");
- var snb=document.getElementById("snb");
- var noofbatsman=[fnb,snb];
- //To store runs of batsman####################################
- //##################################################
- //##################################################
- var runf=document.getElementById("runf");
- var runs=document.getElementById("runs");
- var RunBat=[runf,runs];
- //##################################################
- //##################################################
- //##################################################
- //To store ball played by batsmen###################################
- 
- var ballo=document.getElementById("nobp_first");
- var balls=document.getElementById("nobp_second");
- var ballsp=[ballo,balls];
- //##################################################
- //##################################################
- //##################################################
- //##################################################
- var nameo=document.getElementById("nameo");
- var namet=document.getElementById("namet");
- var nameth=document.getElementById("nameth");
- var namefo=document.getElementById("namefo");
- var namefi=document.getElementById("namefi");
- var namesi=document.getElementById("namesi");
- var namese=document.getElementById("namese");
- var namee=document.getElementById("namee");
- var namen=document.getElementById("namee");
- var namete=document.getElementById("namen");
- var nameel=document.getElementById("nameel");
-//##################################################
- //##################################################
- //##################################################
- //##################################################
-var runo=document.getElementById("runo");          
-var runt=document.getElementById("runt");
-var runth=document.getElementById("runth");
-var runfo=document.getElementById("runfo");
-var runfi=document.getElementById("runfi");
-var runsi=document.getElementById("runsi");
-var runse=document.getElementById("runse");
-var rune=document.getElementById("rune");
-var runn=document.getElementById("runn");
-var runte=document.getElementById("runtr");
-var runel=document.getElementById("runel");  
-  //##################################################
-  //##################################################
-  //##################################################
-  //##################################################
-var ballon=document.getElementById("ballon");  
-var ballt=document.getElementById("ballt");
-var ballth=document.getElementById("ballth");
-var ballfo=document.getElementById("ballfo");
-var ballfi=document.getElementById("ballfi");
-var ballsi=document.getElementById("ballsi");
-var ballse=document.getElementById("ballse");
-var balle=document.getElementById("balle");
-var balln=document.getElementById("balln");
-var ballte=document.getElementById("ballte");
-var ballel=document.getElementById("ballel");
-  //##################################################
-  //##################################################
-  //##################################################
-  //##################################################
-  
-  
-  
-  
-  
-function start(){
-var start=document.getElementById("first").value;
-var openb=document.getElementById("fnb");
-openb.innerHTML=start;
-var second=document.getElementById("second").value;
-var secondb=document.getElementById("snb");
-secondb.innerHTML=second;
-}
-
-
-var i=0;
-var ia=0;
-var ib=0;
-var b=0;
-var ba=0;
-var bb=0;
-var c=0;
-var e=0;
-var g=0;
-var h=0;
-var k=0;
-var n=0;
-var p=0;
-var q=1;
-
-
-
-
-function ballp(){
-b+=1;
-var ball_one=document.getElementById("balls").innerHTML=b;
-if(document.getElementById("skone").checked == true){
-ba+=1;
-document.getElementById("nobp_first").innerHTML=ba;
-}
-if(document.getElementById("sktwo").checked == true){
-bb+=1;
-document.getElementById("nobp_second").innerHTML=bb;
-}
-}
-
-
-function change_strike(){
-if(document.getElementById("skone").checked == true){
-document.getElementById("sktwo").checked=true;
-}
-else if(document.getElementById("sktwo").checked == true){
-document.getElementById("skone").checked=true;
-}
-}
+        <div><br>
+          <center><button id="dot" onclick="increase_dot()"
+              style="background-color:black;color:white;border-width:5px;border-radius:20px">DOT</button>
+            <button id="single" onclick="increase(); change_strike();"
+              style="background-color:black;color:white;border-width:5px;border-radius:20px">SINGLE</button>
+            <button id="double" onclick="increase_two()"
+              style="background-color:black;color:white;border-width:5px;border-radius:20px">DOUBLE</button>
+            <button id="four" onclick="increase_four()"
+              style="background-color:black;color:white;border-width:5px;border-radius:20px">FOUR</button>
+            <button id="six" onclick="increase_six()"
+              style="background-color:black;color:white;border-width:5px;border-radius:20px">SIX</button>
+            <br>
+            <center><button id="wide" onclick="increase_wide()"
+                style="background-color:black;color:white;border-width:5px;border-radius:20px">WIDE</button>
+              <button id="noball" onclick="increase_no()"
+                style="background-color:black;color:white;border-width:5px;border-radius:20px">NO-BALL</button>
+              <button id="bye"
+                style="background-color:black;color:white;border-width:5px;border-radius:20px">BYE</button><br>
+              <button id="overover" onclick="increase_over(); change_strike();"
+                style="background-color:black;color:white;border-width:5px;border-radius:20px">OVER</button>
+            </center>
+        </div>
+      </div>
+    </div><br><br>
+  </div>
 
 
 
 
 
 
-function increase(){
-i+=1;
-var y=document.getElementById("score").innerHTML=i;
-ballp();
-if(document.getElementById("skone").checked == true){
-ia+=1;
-runf.innerHTML=ia;
-}
-if(document.getElementById("sktwo").checked == true){
-ib+=1;
-runs.innerHTML=ib;
-}
-}
 
 
-function increase_two(){
-i+=2;
-var z=document.getElementById("score").innerHTML=i;
-ballp();
-if(document.getElementById("skone").checked == true){
-ia+=2;
-runf.innerHTML=ia;
-}
-if(document.getElementById("sktwo").checked == true){
-ib+=2;
-runs.innerHTML=ib;
-}
-}
-
-function increase_dot(){
-ballp();
-}
-
-function increase_four(){
-i+=4;
-var four=document.getElementById("score").innerHTML=i;
-ballp();
-if(document.getElementById("skone").checked == true){
-ia+=4;
-runf.innerHTML=ia;
-}
-if(document.getElementById("sktwo").checked == true){
-ib+=4;
-runs.innerHTML=ib;
-}
-}
-
-function increase_six(){
-i+=6;
-var six=document.getElementById("score").innerHTML=i;
-ballp();
-if(document.getElementById("skone").checked == true){
-ia+=6;
-runf.innerHTML=ia;
-}
-if(document.getElementById("sktwo").checked == true){
-ib+=6;
-runs.innerHTML=ib;
-}
-}
-
-function increase_wide(){
-i+=1;
-var six=document.getElementById("score").innerHTML=i;
-}
-
-function increase_no(){
-i+=1;
-var six=document.getElementById("score").innerHTML=i;
-}
-
-function increase_out(){
-c+=1;
-k+=1;
-n+=1;
-var six=document.getElementById("wkt").innerHTML=c;
-
-ballp();
-if(c==10){
-document.getElementById("out").onclick="";
-document.getElementById("outout").onclick="";
-document.getElementById("dot").onclick="";
-document.getElementById("single").onclick="";
-document.getElementById("double").onclick="";
-document.getElementById("four").onclick="";
-document.getElementById("six").onclick="";
-document.getElementById("overover").onclick="";
-document.getElementById("noball").onclick="";
-document.getElementById("wide").onclick="";
-}
-}
-
-function out_one(){
-var m=prompt("ENTER THE NEXT BATSMAN NAME");
-switch(k){
-case 1:nameo.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
-runo.innerHTML=runf.innerHTML;ballon.innerHTML=ballo.innerHTML;
-break;
-case 2:namet.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
-runt.innerHTML=runf.innerHTML;ballt.innerHTML=ballo.innerHTML;
-break;
-case 3:nameth.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
-runth.innerHTML=runf.innerHTML;ballth.innerHTML=ballo.innerHTML;
-break;
-case 4:namefo.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
-runfo.innerHTML=runf.innerHTML;ballfo.innerHTML=ballo.innerHTML;
-break;
-case 5:namefi.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
-runfi.innerHTML=runf.innerHTML;ballfi.innerHTML=ballo.innerHTML;
-break;
-case 6:namesi.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
-runsi.innerHTML=runf.innerHTML;ballsi.innerHTML=ballo.innerHTML;
-break;
-case 7:namese.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
-runse.innerHTML=runf.innerHTML;ballse.innerHTML=ballo.innerHTML;
-break;
-case 8:namee.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
-rune.innerHTML=runf.innerHTML;balle.innerHTML=ballo.innerHTML;
-break;
-case 9:namete.innerHTML=fnb.innerHTML;noofbatsman[0].innerHTML=m;
-runn.innerHTML=runf.innerHTML;balln.innerHTML=ballo.innerHTML;
-break;
-case 10:nameel.innerHTML=fnb.innerHTML;alert("ALL OUT");
-runtr.innerHTML=runf.innerHTML;ballte.innerHTML=ballo.innerHTML;
-break;
-}
-return ba=0,ia=0;
-
-}
-function out_two(){
-var m=prompt("ENTER THE NEXT BATSMAN NAME");
-switch(k){
-case 1:nameo.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
-runo.innerHTML=runs.innerHTML;ballon.innerHTML=balls.innerHTML;
-break;
-case 2:namet.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
-runt.innerHTML=runs.innerHTML;ballt.innerHTML=balls.innerHTML;
-break;
-case 3:nameth.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
-runth.innerHTML=runs.innerHTML;ballth.innerHTML=balls.innerHTML;
-break;
-case 4:namefo.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
-runfo.innerHTML=runs.innerHTML;ballfo.innerHTML=balls.innerHTML;
-break;
-case 5:namefi.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
-runfi.innerHTML=runs.innerHTML;ballfi.innerHTML=balls.innerHTML;
-break;
-case 6:namesi.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
-runsi.innerHTML=runs.innerHTML;ballsi.innerHTML=balls.innerHTML;
-break;
-case 7:namese.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
-runse.innerHTML=runs.innerHTML;ballse.innerHTML=balls.innerHTML;
-break;
-case 8:namee.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
-rune.innerHTML=runs.innerHTML;balle.innerHTML=balls.innerHTML;
-break;
-case 9:namete.innerHTML=snb.innerHTML;noofbatsman[1].innerHTML=m;
-runn.innerHTML=runs.innerHTML;balln.innerHTML=balls.innerHTML;
-break;
-case 10:nameel.innerHTML=snb.innerHTML;alert("ALL OUT");
-runtr.innerHTML=runs.innerHTML;ballte.innerHTML=balls.innerHTML;
-break;
-}
-return bb=0,ib=0;
-
-}
-function increase_over(){
-g+=1;
-n+=1;
-var over=document.getElementById("overplay").innerHTML=g;
-}
-
-function appear(){
-p+=1;
-if(p%2!=0){
-document.getElementById("AllScore").style.display="block";}
-if(p%2==0){
-document.getElementById("AllScore").style.display="none";}
-}
-
-function appear_two(){
-document.getElementById("all").style.display="block";
-}
 
 
-</script>
+  <script type="text/javascript">
+    //srrings variables#############################
+    var d = "*";
+    var f = "";
+    var j = "out";
+    // To store all the strike#################
+    //##################################################
+    //##################################################
+    //##################################################
+    var skone = document.getElementById("skone").checked;
+    var sktwo = document.getElementById("sktwo").checked;
+    var OnStrike = [skone, sktwo];
+    //to store batsman name############################
+    //##################################################
+    //##################################################
+    //##################################################
+    var fnb = document.getElementById("fnb");
+    var snb = document.getElementById("snb");
+    var noofbatsman = [fnb, snb];
+    //To store runs of batsman####################################
+    //##################################################
+    //##################################################
+    var runf = document.getElementById("runf");
+    var runs = document.getElementById("runs");
+    var RunBat = [runf, runs];
+    //##################################################
+    //##################################################
+    //##################################################
+    //To store ball played by batsmen###################################
+
+    var ballo = document.getElementById("nobp_first");
+    var balls = document.getElementById("nobp_second");
+    var ballsp = [ballo, balls];
+    //##################################################
+    //##################################################
+    //##################################################
+    //##################################################
+    var nameo = document.getElementById("nameo");
+    var namet = document.getElementById("namet");
+    var nameth = document.getElementById("nameth");
+    var namefo = document.getElementById("namefo");
+    var namefi = document.getElementById("namefi");
+    var namesi = document.getElementById("namesi");
+    var namese = document.getElementById("namese");
+    var namee = document.getElementById("namee");
+    var namen = document.getElementById("namee");
+    var namete = document.getElementById("namen");
+    var nameel = document.getElementById("nameel");
+    //##################################################
+    //##################################################
+    //##################################################
+    //##################################################
+    var runo = document.getElementById("runo");
+    var runt = document.getElementById("runt");
+    var runth = document.getElementById("runth");
+    var runfo = document.getElementById("runfo");
+    var runfi = document.getElementById("runfi");
+    var runsi = document.getElementById("runsi");
+    var runse = document.getElementById("runse");
+    var rune = document.getElementById("rune");
+    var runn = document.getElementById("runn");
+    var runte = document.getElementById("runtr");
+    var runel = document.getElementById("runel");
+    //##################################################
+    //##################################################
+    //##################################################
+    //##################################################
+    var ballon = document.getElementById("ballon");
+    var ballt = document.getElementById("ballt");
+    var ballth = document.getElementById("ballth");
+    var ballfo = document.getElementById("ballfo");
+    var ballfi = document.getElementById("ballfi");
+    var ballsi = document.getElementById("ballsi");
+    var ballse = document.getElementById("ballse");
+    var balle = document.getElementById("balle");
+    var balln = document.getElementById("balln");
+    var ballte = document.getElementById("ballte");
+    var ballel = document.getElementById("ballel");
+    //##################################################
+    //##################################################
+    //##################################################
+    //##################################################
+
+
+
+
+
+    function start() {
+      var start = document.getElementById("first").value;
+      var openb = document.getElementById("fnb");
+      openb.innerHTML = start;
+      var second = document.getElementById("second").value;
+      var secondb = document.getElementById("snb");
+      secondb.innerHTML = second;
+    }
+
+
+    var i = 0;
+    var ia = 0;
+    var ib = 0;
+    var b = 0;
+    var ba = 0;
+    var bb = 0;
+    var c = 0;
+    var e = 0;
+    var g = 0;
+    var h = 0;
+    var k = 0;
+    var n = 0;
+    var p = 0;
+    var q = 1;
+
+
+
+
+    function ballp() {
+      b += 1;
+      var ball_one = document.getElementById("balls").innerHTML = b;
+      if (document.getElementById("skone").checked == true) {
+        ba += 1;
+        document.getElementById("nobp_first").innerHTML = ba;
+      }
+      if (document.getElementById("sktwo").checked == true) {
+        bb += 1;
+        document.getElementById("nobp_second").innerHTML = bb;
+      }
+    }
+
+
+    function change_strike() {
+      if (document.getElementById("skone").checked == true) {
+        document.getElementById("sktwo").checked = true;
+      }
+      else if (document.getElementById("sktwo").checked == true) {
+        document.getElementById("skone").checked = true;
+      }
+    }
+
+
+
+
+
+
+    function increase() {
+      i += 1;
+      var y = document.getElementById("score").innerHTML = i;
+      ballp();
+      if (document.getElementById("skone").checked == true) {
+        ia += 1;
+        runf.innerHTML = ia;
+      }
+      if (document.getElementById("sktwo").checked == true) {
+        ib += 1;
+        runs.innerHTML = ib;
+      }
+    }
+
+
+    function increase_two() {
+      i += 2;
+      var z = document.getElementById("score").innerHTML = i;
+      ballp();
+      if (document.getElementById("skone").checked == true) {
+        ia += 2;
+        runf.innerHTML = ia;
+      }
+      if (document.getElementById("sktwo").checked == true) {
+        ib += 2;
+        runs.innerHTML = ib;
+      }
+    }
+
+    function increase_dot() {
+      ballp();
+    }
+
+    function increase_four() {
+      i += 4;
+      var four = document.getElementById("score").innerHTML = i;
+      ballp();
+      if (document.getElementById("skone").checked == true) {
+        ia += 4;
+        runf.innerHTML = ia;
+      }
+      if (document.getElementById("sktwo").checked == true) {
+        ib += 4;
+        runs.innerHTML = ib;
+      }
+    }
+
+    function increase_six() {
+      i += 6;
+      var six = document.getElementById("score").innerHTML = i;
+      ballp();
+      if (document.getElementById("skone").checked == true) {
+        ia += 6;
+        runf.innerHTML = ia;
+      }
+      if (document.getElementById("sktwo").checked == true) {
+        ib += 6;
+        runs.innerHTML = ib;
+      }
+    }
+
+    function increase_wide() {
+      i += 1;
+      var six = document.getElementById("score").innerHTML = i;
+    }
+
+    function increase_no() {
+      i += 1;
+      var six = document.getElementById("score").innerHTML = i;
+    }
+
+    function increase_out() {
+      c += 1;
+      k += 1;
+      n += 1;
+      var six = document.getElementById("wkt").innerHTML = c;
+
+      ballp();
+      if (c == 10) {
+        document.getElementById("out").onclick = "";
+        document.getElementById("outout").onclick = "";
+        document.getElementById("dot").onclick = "";
+        document.getElementById("single").onclick = "";
+        document.getElementById("double").onclick = "";
+        document.getElementById("four").onclick = "";
+        document.getElementById("six").onclick = "";
+        document.getElementById("overover").onclick = "";
+        document.getElementById("noball").onclick = "";
+        document.getElementById("wide").onclick = "";
+      }
+    }
+
+    function out_one() {
+      var m = prompt("ENTER THE NEXT BATSMAN NAME");
+      switch (k) {
+        case 1: nameo.innerHTML = fnb.innerHTML; noofbatsman[0].innerHTML = m;
+          runo.innerHTML = runf.innerHTML; ballon.innerHTML = ballo.innerHTML;
+          break;
+        case 2: namet.innerHTML = fnb.innerHTML; noofbatsman[0].innerHTML = m;
+          runt.innerHTML = runf.innerHTML; ballt.innerHTML = ballo.innerHTML;
+          break;
+        case 3: nameth.innerHTML = fnb.innerHTML; noofbatsman[0].innerHTML = m;
+          runth.innerHTML = runf.innerHTML; ballth.innerHTML = ballo.innerHTML;
+          break;
+        case 4: namefo.innerHTML = fnb.innerHTML; noofbatsman[0].innerHTML = m;
+          runfo.innerHTML = runf.innerHTML; ballfo.innerHTML = ballo.innerHTML;
+          break;
+        case 5: namefi.innerHTML = fnb.innerHTML; noofbatsman[0].innerHTML = m;
+          runfi.innerHTML = runf.innerHTML; ballfi.innerHTML = ballo.innerHTML;
+          break;
+        case 6: namesi.innerHTML = fnb.innerHTML; noofbatsman[0].innerHTML = m;
+          runsi.innerHTML = runf.innerHTML; ballsi.innerHTML = ballo.innerHTML;
+          break;
+        case 7: namese.innerHTML = fnb.innerHTML; noofbatsman[0].innerHTML = m;
+          runse.innerHTML = runf.innerHTML; ballse.innerHTML = ballo.innerHTML;
+          break;
+        case 8: namee.innerHTML = fnb.innerHTML; noofbatsman[0].innerHTML = m;
+          rune.innerHTML = runf.innerHTML; balle.innerHTML = ballo.innerHTML;
+          break;
+        case 9: namete.innerHTML = fnb.innerHTML; noofbatsman[0].innerHTML = m;
+          runn.innerHTML = runf.innerHTML; balln.innerHTML = ballo.innerHTML;
+          break;
+        case 10: nameel.innerHTML = fnb.innerHTML; alert("ALL OUT");
+          runtr.innerHTML = runf.innerHTML; ballte.innerHTML = ballo.innerHTML;
+          break;
+      }
+      return ba = 0, ia = 0;
+
+    }
+    function out_two() {
+      var m = prompt("ENTER THE NEXT BATSMAN NAME");
+      switch (k) {
+        case 1: nameo.innerHTML = snb.innerHTML; noofbatsman[1].innerHTML = m;
+          runo.innerHTML = runs.innerHTML; ballon.innerHTML = balls.innerHTML;
+          break;
+        case 2: namet.innerHTML = snb.innerHTML; noofbatsman[1].innerHTML = m;
+          runt.innerHTML = runs.innerHTML; ballt.innerHTML = balls.innerHTML;
+          break;
+        case 3: nameth.innerHTML = snb.innerHTML; noofbatsman[1].innerHTML = m;
+          runth.innerHTML = runs.innerHTML; ballth.innerHTML = balls.innerHTML;
+          break;
+        case 4: namefo.innerHTML = snb.innerHTML; noofbatsman[1].innerHTML = m;
+          runfo.innerHTML = runs.innerHTML; ballfo.innerHTML = balls.innerHTML;
+          break;
+        case 5: namefi.innerHTML = snb.innerHTML; noofbatsman[1].innerHTML = m;
+          runfi.innerHTML = runs.innerHTML; ballfi.innerHTML = balls.innerHTML;
+          break;
+        case 6: namesi.innerHTML = snb.innerHTML; noofbatsman[1].innerHTML = m;
+          runsi.innerHTML = runs.innerHTML; ballsi.innerHTML = balls.innerHTML;
+          break;
+        case 7: namese.innerHTML = snb.innerHTML; noofbatsman[1].innerHTML = m;
+          runse.innerHTML = runs.innerHTML; ballse.innerHTML = balls.innerHTML;
+          break;
+        case 8: namee.innerHTML = snb.innerHTML; noofbatsman[1].innerHTML = m;
+          rune.innerHTML = runs.innerHTML; balle.innerHTML = balls.innerHTML;
+          break;
+        case 9: namete.innerHTML = snb.innerHTML; noofbatsman[1].innerHTML = m;
+          runn.innerHTML = runs.innerHTML; balln.innerHTML = balls.innerHTML;
+          break;
+        case 10: nameel.innerHTML = snb.innerHTML; alert("ALL OUT");
+          runtr.innerHTML = runs.innerHTML; ballte.innerHTML = balls.innerHTML;
+          break;
+      }
+      return bb = 0, ib = 0;
+
+    }
+    function increase_over() {
+      g += 1;
+      n += 1;
+      var over = document.getElementById("overplay").innerHTML = g;
+    }
+
+    function appear() {
+      p += 1;
+      if (p % 2 != 0) {
+        document.getElementById("AllScore").style.display = "block";
+      }
+      if (p % 2 == 0) {
+        document.getElementById("AllScore").style.display = "none";
+      }
+    }
+
+    function appear_two() {
+      document.getElementById("all").style.display = "block";
+    }
+
+
+  </script>
